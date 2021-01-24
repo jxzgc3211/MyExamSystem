@@ -17,7 +17,7 @@ namespace MyExamSystem.View
             if (id == 1)
             {
                 Msg.Text = "教师登录";
-                this.HiddenField1.Value = "1";
+                this.HiddenField1.Value = "1";//对隐藏域进行赋值
             }else if (id == 2)
             {
                 Msg.Text = "学生登录";
@@ -39,16 +39,17 @@ namespace MyExamSystem.View
             //3、利用隐藏域获取值
             string name = this.UserName.Text;
             string pwd = this.PassWord.Text;
-            string typeId = this.HiddenField1.Value;
+            string typeId = this.HiddenField1.Value;//获取隐藏域的值，用户识别登录用户的性质
             if (typeId == "1")
             {
                 //教师登录，判断用户名、密码是否正确
                 //实现用户名和密码验证，去数据库验证
-                bool result=TeacherManager.CheckTeacherUser(name, pwd);
-                if (result)
+                bool tea_result=TeacherManager.CheckTeacherUser(name, pwd);
+                if (tea_result)
                 {
                     //跳转到教师的管理界面
-                    this.Msg.Text = "登录成功";
+                    Session["userName"] = name;
+                    Response.Redirect("TeacherHome.aspx");//页面跳转
                 }
                 else
                 {
@@ -56,10 +57,20 @@ namespace MyExamSystem.View
                     this.Msg.Text = "用户名或密码错误";
                 }
             }
+            //登录用户为学生的情况
             if (typeId == "2")
             {
                 //学生登录，判断用户名、密码是否正确
                 //实现用户名和密码验证
+                bool stu_result = StudentManager.CheckStudentUser(name, pwd);
+                if (stu_result)
+                {
+                    this.Msg.Text="学生登录成功";
+                }
+                else
+                {
+                    this.Msg.Text = "用户名或密码错误";
+                }
             }
         }
     }

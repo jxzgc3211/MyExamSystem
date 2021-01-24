@@ -1,10 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Header.master.cs" Inherits="MyExamSystem.View.Header" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TeacherMain.master.cs" Inherits="MyExamSystem.View.TeacherMain" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -20,8 +20,14 @@
                 </div>
                 <div class="col-lg-8"></div>
                 <div class="col-lg-2">
-                    <a href="login.aspx?typeId=1" style="color:white;font-size:20px">教师登录</a>
-                    <a href="login.aspx?typeId=2" style="color:white;font-size:20px">学生登录</a>
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <asp:Button ID="Button1" runat="server" Text="退出" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="#" class="btn btn-success">关于</a>
+                    <a href="StudentPage.aspx" class="btn btn-success">学生管理</a>
                 </div>
             </div>
 
@@ -31,7 +37,6 @@
                 </asp:ContentPlaceHolder>
             </div>
         </div>
-
     </form>
 </body>
 </html>

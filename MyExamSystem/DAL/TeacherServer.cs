@@ -11,6 +11,7 @@ namespace MyExamSystem.DAL
     /// </summary>
     public class TeacherServer
     {
+        //根据用户名，查询用户是否存在
         public static Teacher SelectTeacherByUserName(string userName) {
             using (ExamDBEntities db=new ExamDBEntities()) {
               Teacher teacher= db.Teachers.SingleOrDefault(t => t.TeacherLoginName == userName);

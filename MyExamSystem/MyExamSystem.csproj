@@ -92,10 +92,14 @@
     </Content>
     <Content Include="View\Index.aspx" />
     <Content Include="View\login.aspx" />
+    <Content Include="View\StudentPage.aspx" />
+    <Content Include="View\TeacherHome.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\StudentManager.cs" />
     <Compile Include="BLL\TeacherManager.cs" />
+    <Compile Include="DAL\StudentServer.cs" />
     <Compile Include="DAL\TeacherServer.cs" />
     <Compile Include="Models\ExamModel1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -140,6 +144,27 @@
     <Compile Include="View\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\StudentPage.aspx.cs">
+      <DependentUpon>StudentPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StudentPage.aspx.designer.cs">
+      <DependentUpon>StudentPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TeacherHome.aspx.cs">
+      <DependentUpon>TeacherHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TeacherHome.aspx.designer.cs">
+      <DependentUpon>TeacherHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TeacherMain.Master.cs">
+      <DependentUpon>TeacherMain.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TeacherMain.Master.designer.cs">
+      <DependentUpon>TeacherMain.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\ExamModel1.edmx">
@@ -151,6 +176,7 @@
     </Content>
     <None Include="packages.config" />
     <Content Include="View\Header.Master" />
+    <Content Include="View\TeacherMain.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
