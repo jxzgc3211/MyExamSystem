@@ -23,5 +23,14 @@ namespace MyExamSystem.DAL
                return  db.Students.ToList();
             }
         }
+        public static Student SelectStudentByID(int id)
+        {
+            using(ExamDBEntities db=new ExamDBEntities())
+            {
+                Student stu = db.Students.SingleOrDefault(s => s.StuID == id);
+                return stu;
+            } 
+        }
+      
     }
 }

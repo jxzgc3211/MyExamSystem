@@ -92,6 +92,8 @@
     </Content>
     <Content Include="View\Index.aspx" />
     <Content Include="View\login.aspx" />
+    <Content Include="View\StudentDetail.aspx" />
+    <Content Include="View\StudentModify.aspx" />
     <Content Include="View\StudentPage.aspx" />
     <Content Include="View\TeacherHome.aspx" />
     <Content Include="Web.config" />
@@ -143,6 +145,20 @@
     </Compile>
     <Compile Include="View\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StudentDetail.aspx.cs">
+      <DependentUpon>StudentDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StudentDetail.aspx.designer.cs">
+      <DependentUpon>StudentDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StudentModify.aspx.cs">
+      <DependentUpon>StudentModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StudentModify.aspx.designer.cs">
+      <DependentUpon>StudentModify.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StudentPage.aspx.cs">
       <DependentUpon>StudentPage.aspx</DependentUpon>

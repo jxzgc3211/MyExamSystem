@@ -26,8 +26,9 @@
                         <td><%#Eval("StuEmail") %></td>
                         <td><%#Eval("StuGrade") %></td>
                         <td>
-                            <a href="#" class="btn btn-success">编辑</a>
-                            <a href="#" class="btn btn-success">详情</a>
+                            <a href="StudentModify.aspx?stuId=<%#Eval("StuID")%>" class="btn btn-success">编辑</a>
+                            <%--当点击“详情”的使用，应该把当前行的学生id传到详情页,通过Eval函数传递参数--%>
+                            <a href="StudentDetail.aspx?stuId=<%#Eval("StuID")%>" class="btn btn-success">详情</a>
                             <asp:Button ID="Button1" runat="server" Text="删除" />
                         </td>
                     </tr>

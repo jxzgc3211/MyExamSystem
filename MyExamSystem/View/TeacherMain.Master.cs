@@ -11,8 +11,8 @@ namespace MyExamSystem.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string teacherName = Session["userName"].ToString();
-            Label1.Text = teacherName;
+            string name = Session["userName"].ToString();
+            Label1.Text ="欢迎：" +name;
         }
     }
 }
