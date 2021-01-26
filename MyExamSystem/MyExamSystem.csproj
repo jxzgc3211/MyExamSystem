@@ -90,6 +90,7 @@
       <DependentUpon>ExamModel1.edmx</DependentUpon>
       <LastGenOutput>ExamModel1.cs</LastGenOutput>
     </Content>
+    <Content Include="View\AddStudent.aspx" />
     <Content Include="View\Index.aspx" />
     <Content Include="View\login.aspx" />
     <Content Include="View\StudentDetail.aspx" />
@@ -125,6 +126,13 @@
       <DependentUpon>ExamModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\AddStudent.aspx.cs">
+      <DependentUpon>AddStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AddStudent.aspx.designer.cs">
+      <DependentUpon>AddStudent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Header.Master.cs">
       <DependentUpon>Header.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

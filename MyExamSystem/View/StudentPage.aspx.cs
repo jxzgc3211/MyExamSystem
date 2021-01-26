@@ -13,8 +13,14 @@ namespace MyExamSystem.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //页面运行时，加载全部学生信息
-            MyDataBind();
+            if (!IsPostBack)
+            {
+                //页面运行时，加载全部学生信息
+                //★★★★2021-1-26，数据绑定放入页面首次加载时。
+                //当后续数据更新后，再调用该方法就不会在报未验证的奇怪错误。
+                MyDataBind();
+
+            }            
         }
         public void MyDataBind()
         {
@@ -24,6 +30,20 @@ namespace MyExamSystem.View
             //数据绑定
             this.Repeate1.DataSource = list;
             this.Repeate1.DataBind();
+        }
+
+        protected void Repeate1_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            //相应删除按钮的操作
+            if (e.CommandName == "del")
+            {                
+                //获取按钮带过来的id参数
+                int id = Convert.ToInt32(e.CommandArgument.ToString());
+                if (StudentManager.DeleteStudentByID(id))
+                {
+                    Response.Redirect("StudentPage.aspx");
+                }
+            }
         }
     }
 }

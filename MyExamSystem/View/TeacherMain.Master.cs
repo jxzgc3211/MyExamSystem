@@ -14,5 +14,11 @@ namespace MyExamSystem.View
             string name = Session["userName"].ToString();
             Label1.Text ="欢迎：" +name;
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("index.aspx");
+        }
     }
 }

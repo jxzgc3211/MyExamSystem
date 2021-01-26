@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/TeacherMain.Master" AutoEventWireup="true" CodeBehind="StudentPage.aspx.cs" Inherits="MyExamSystem.View.StudentPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/TeacherMain.Master" AutoEventWireup="true" CodeBehind="StudentPage.aspx.cs" Inherits="MyExamSystem.View.StudentPage"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -15,7 +15,7 @@
                 <td>系别</td>
                 <td>操作</td>
             </tr>
-            <asp:Repeater ID="Repeate1" runat="server">
+            <asp:Repeater ID="Repeate1" runat="server" OnItemCommand="Repeate1_ItemCommand">
                 <ItemTemplate>
                     <tr>
                         <td><%#Eval("StuID") %></td>
@@ -29,12 +29,13 @@
                             <a href="StudentModify.aspx?stuId=<%#Eval("StuID")%>" class="btn btn-success">编辑</a>
                             <%--当点击“详情”的使用，应该把当前行的学生id传到详情页,通过Eval函数传递参数--%>
                             <a href="StudentDetail.aspx?stuId=<%#Eval("StuID")%>" class="btn btn-success">详情</a>
-                            <asp:Button ID="Button1" runat="server" Text="删除" />
+                            <%--当点击“删除按钮”时，应获取到对应行的编号--%>
+                            <asp:Button ID="Button1" runat="server" Text="删除" CssClass="btn btn-danger" CommandName="del" CommandArgument='<%#Eval("StuID") %>' />
                         </td>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>
         </table>
-        <asp:Button ID="AddStudent" runat="server" Text="添加学生" />
+       <a href="AddStudent.aspx" class="btn btn-success">添加新学生</a>
     </div>
 </asp:Content>
